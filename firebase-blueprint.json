@@ -1,0 +1,86 @@
+{
+  "entities": {
+    "users": {
+      "title": "users",
+      "description": "User accounts and profile info",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "username": { "type": "string" },
+        "fullName": { "type": "string" },
+        "email": { "type": "string" },
+        "phoneNumber": { "type": "string" },
+        "password": { "type": "string" },
+        "avatarUrl": { "type": "string" },
+        "bio": { "type": "string" },
+        "followersCount": { "type": "number" },
+        "followingCount": { "type": "number" },
+        "postsCount": { "type": "number" },
+        "isVerified": { "type": "boolean" },
+        "isBlocked": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["username", "fullName"]
+    },
+    "posts": {
+      "title": "posts",
+      "description": "User feed posts",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "username": { "type": "string" },
+        "userAvatar": { "type": "string" },
+        "isVerified": { "type": "boolean" },
+        "location": { "type": "string" },
+        "mediaUrls": { "type": "array", "items": { "type": "string" } },
+        "mediaType": { "type": "string" },
+        "filterName": { "type": "string" },
+        "caption": { "type": "string" },
+        "likesCount": { "type": "number" },
+        "commentsCount": { "type": "number" },
+        "sharesCount": { "type": "number" },
+        "savesCount": { "type": "number" },
+        "category": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "username", "mediaUrls"]
+    },
+    "conversations": {
+      "title": "conversations",
+      "description": "Direct message conversations",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "participantIds": { "type": "array", "items": { "type": "string" } },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["participantIds"]
+    },
+    "messages": {
+      "title": "messages",
+      "description": "Chat messages",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "conversationId": { "type": "string" },
+        "senderId": { "type": "string" },
+        "receiverId": { "type": "string" },
+        "text": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["conversationId", "senderId", "text"]
+    },
+    "blockedIdentifiers": {
+      "title": "blockedIdentifiers",
+      "description": "Blocked phone numbers or emails",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "identifier": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["identifier"]
+    }
+  }
+}

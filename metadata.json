@@ -1,0 +1,6 @@
+{
+  "name": "HUMA",
+  "description": "HUMA - Human Made. Real-time authentic social network for human creativity, moments, stories, and connections.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
